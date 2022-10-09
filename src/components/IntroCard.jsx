@@ -1,5 +1,7 @@
 import React from 'react'
 import {Box, Typography, Paper, Button, Container, Stack, TextField, createTheme, ThemeProvider} from '@mui/material'
+import { motion } from 'framer-motion'
+
 
 function IntroCard() {
 
@@ -19,7 +21,7 @@ function IntroCard() {
       
       <Container id='container'>
       
-      <Box  width='53%'>
+      <Box component={motion.div} initial={{opacity:0}} animate={{opacity:1}}  width='53%'>
       <Typography variant='h4' fontWeight='700' gutterBottom>Learn to code by watching others</Typography>
 
 <Typography fontWeight='400' width='65%'>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</Typography>
