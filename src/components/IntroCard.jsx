@@ -21,10 +21,10 @@ function IntroCard() {
       
       <Container id='container'>
       
-      <Box component={motion.div} initial={{opacity:0}} animate={{opacity:1}}  transition={{delay:.1}} width='53%'>
+      <Box component={motion.div} initial={{opacity:0}} animate={{opacity:1}}  transition={{delay:.1}} align='center' p={1}>
       <Typography variant='h4' fontWeight='700' gutterBottom>Learn to code by watching others</Typography>
 
-<Typography fontWeight='400' width='65%'>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</Typography>
+<Typography fontWeight='400' >See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</Typography>
       </Box>
 
       <Box>
