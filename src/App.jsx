@@ -1,14 +1,29 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
 import IntroCard from './components/IntroCard'
+import {createTheme, ThemeProvider } from '@mui/material'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+ 
+  const theme = createTheme({
+    typography:{
+      fontSize: 14
+    }
+  })
+
 
   return (
+   <>
+    <ThemeProvider theme={theme}>
+
     <div className="App">
   <IntroCard />
     </div>
+
+    </ThemeProvider>
+   </>
   )
 }
 
