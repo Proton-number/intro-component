@@ -17,10 +17,13 @@ function IntroCard() {
   return (
     <Box>
       
-      <Container>
-       <Typography variant='h4' fontWeight='700' gutterBottom>Learn to code by watching others</Typography>
+      <Container id='container'>
+      
+      <Box  width='53%'>
+      <Typography variant='h4' fontWeight='700' gutterBottom>Learn to code by watching others</Typography>
 
-       <Typography fontWeight='400'>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</Typography>
+<Typography fontWeight='400' width='65%'>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</Typography>
+      </Box>
 
       <Box>
      
