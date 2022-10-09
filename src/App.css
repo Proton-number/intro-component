@@ -10,11 +10,29 @@
 }
 
 
+#container > div{
+  padding: 8px;
+}
+
+
+#words{
+ text-align: center;
+}
+
+
+
 @media screen and (min-width:760px) {
   
 #container{
   display: flex;
   place-items: center;
+}
+
+
+
+#words{
+  width:56%;
+  padding: 0;
 }
 
 
