@@ -69,7 +69,7 @@ const btnHandler = () =>{
 
 <Stack direction='column'  spacing={3}   >
 
-<TextField label='First Name'  error={firstName === '' ? errorColor : false}  helperText={firstName === '' ? errorMessage : ''} onChange={(e)=> setFirstName(e.target.value)} value={firstName}  variant='outlined' pattern="[a-zA-Z'-'\s]*" />
+<TextField label='First Name'  error={firstName === '' ? errorColor : false}  helperText={firstName === '' ? errorMessage : ''} onChange={(e)=> setFirstName(e.target.value)} value={firstName}  variant='outlined'  />
 
 <TextField label='Last Name'  variant='outlined' error={lastName === '' ? errorColor : false}  helperText={lastName === ''  ? errorMessage : ''} onChange={(e)=> setLastName(e.target.value)} value={lastName}    />
 
