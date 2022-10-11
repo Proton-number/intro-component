@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Box, Typography, Paper, Button, Container, Stack, TextField, createTheme, ThemeProvider} from '@mui/material'
 import { motion } from 'framer-motion'
 
 
 function IntroCard() {
+
+ 
+
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [password, setPassword] = useState('')
+  const [emailText, setEmailText] = useState('')
+  const [emailError, setEmailError] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+  const [errorColor, setErrorColor] = useState(false)
+
+
 
   const theme = createTheme({
     palette:{
@@ -11,9 +23,27 @@ function IntroCard() {
             main:'hsl(159, 100%, 41%)',
             contrastText:'white'
         }
-    }
+    },
+
+   
 })
 
+
+
+const btnHandler = () =>{
+  if (firstName === ''|| lastName === '' || !emailText.includes('@')  ){
+    setErrorMessage('Must be more than 4 characters')
+    setEmailError('Enter a valid email')
+    setErrorColor(true)
+    } 
+    else{
+      setErrorColor(false)
+      setFirstName('')
+    }
+}
+
+
+ 
 
 
   return (
@@ -31,7 +61,7 @@ function IntroCard() {
      
      
 
-     <Box  p={3} sx={{bgcolor: 'hsl(249, 30%, 47%)', marginTop: 3, marginBottom:3, borderRadius:2}}  variant='div' gutterBottom> <span style={{fontWeight: 700}}>Try it free 7 days</span>  then $20/mo, thereafter </Box>
+     <Box  p={3} sx={{bgcolor: 'hsl(249, 30%, 47%)', marginTop: 3, marginBottom:3, borderRadius:2}}  variant='div' > <span style={{fontWeight: 700}}>Try it free 7 days</span>  then $20/mo, thereafter </Box>
 
     
 
@@ -39,16 +69,16 @@ function IntroCard() {
 
 <Stack direction='column'  spacing={3}   >
 
-<TextField label='First Name'   variant='outlined' />
+<TextField label='First Name'  error={firstName === '' ? errorColor : false}  helperText={firstName === '' ? errorMessage : ''} onChange={(e)=> setFirstName(e.target.value)} value={firstName}  variant='outlined' pattern="[a-zA-Z'-'\s]*" />
 
-<TextField label='Last Name'  variant='outlined' />
+<TextField label='Last Name'  variant='outlined' error={lastName === '' ? errorColor : false}  helperText={lastName === ''  ? errorMessage : ''} onChange={(e)=> setLastName(e.target.value)} value={lastName}    />
 
-<TextField label='Email Address' variant='outlined' />
+<TextField label='Email Address' variant='outlined' error={ emailText.includes('@') ? false : errorColor}  helperText={emailText.includes('@') ? '' : emailError} onChange={(e) => setEmailText(e.target.value)} value={emailText}   />
 
-<TextField label='Password'  type='password' variant='outlined' />
+<TextField label='Password' error={password === '' ? errorColor : false}  helperText={password === ''  ? errorMessage : ''} onChange={(e)=> setPassword(e.target.value)}  value={password}  type='password' variant='outlined' />
 
 <ThemeProvider theme={theme}>
-<Button color='primary' variant='contained' size='large' >CLAIM YOUR FREE TRIAL</Button>
+<Button color='primary' variant='contained' size='large' onClick={btnHandler} >CLAIM YOUR FREE TRIAL</Button>
 </ThemeProvider>
 
 </Stack>
