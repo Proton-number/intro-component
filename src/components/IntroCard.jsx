@@ -38,7 +38,6 @@ const btnHandler = () =>{
     } 
     else{
       setErrorColor(false)
-      setFirstName('')
     }
 }
 
